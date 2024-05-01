@@ -1,6 +1,6 @@
 function(context, args){// t:#s.test.corp
 
-	
+	//if (context.caller === "rincewind") return;
 	args = args || {};
 
 	let  targetArgs ={},
@@ -9,9 +9,9 @@ function(context, args){// t:#s.test.corp
 	const e = ["open", "unlock", "release"],
 		p = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101],//primes
 		K = ["6hh8xw", "cmppiq", "sa23uw", "tvfkyq", "uphlaw", "vc2c7q", "xwz7ja","ellux0","i874y3","9p65cu","72umy0"],//keys
-		C = ["green", "lime", "yellow", "orange", "red", "purple", "blue", "cyan"],//colors
-		Q = ["pattern ","device","more","humor","angie's","mallory's","che ","will","faythe","hack","pet","safety","service","fact","capture","friend","th3","provides i","gc","CAFE"],//questions
- 		A = ["fran_lee","robovac","sentience","sans_comedy","angels","minions","sisters","petra","fountain","helpdesk","bunnybat","get_level","weathernet","eve","resource","bo","heard","teach","outta_juice","poetry"];//answers
+		C = ["green", "lime", "yellow", "orange", "red", "purple", "blue", "cyan"];//colors
+		//Q = ["pattern ","device","more","humor","angie's","mallory's","che ","will","faythe","hack","pet","safety","service","fact","capture","friend","th3","provides i","gc","CAFE"],//questions
+ 		//A = ["fran_lee","robovac","sentience","sans_comedy","angels","minions","sisters","petra","fountain","helpdesk","bunnybat","get_level","weathernet","eve","resource","bo","heard","teach","outta_juice","poetry"];//answers
 	
 	function call() {
 			out = args.t.call(targetArgs);
@@ -107,9 +107,27 @@ function(context, args){// t:#s.test.corp
 			
 			    call();	
 			} while (out.includes("security k3y."));
+		
+		}else if (out.includes("DATA_CHECK")){
 			
+			targetArgs.DATA_CHECK= "";
+			let strings = args.target.call(DATA_CHECK).split("\n")
+			for (let i of strings)
+		{
+			targetArgs.DATA_CHECK += #fs.lore.data_check({lookup:i}).answer
+		}
+				call();
 		} else {
 			return"i dont know this\n" +out;
 		};
 	}
 }
+
+
+
+
+
+
+
+
+
