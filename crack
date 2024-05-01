@@ -1,0 +1,115 @@
+function(context, args){// t:#s.test.corp
+
+	//if (context.caller === "rincewind") return;
+	args = args || {};
+
+	let  targetArgs ={},
+		out;
+	
+	const e = ["open", "unlock", "release"],
+		p = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101],//primes
+		K = ["6hh8xw", "cmppiq", "sa23uw", "tvfkyq", "uphlaw", "vc2c7q", "xwz7ja","ellux0","i874y3","9p65cu","72umy0"],//keys
+		C = ["green", "lime", "yellow", "orange", "red", "purple", "blue", "cyan"],//colors
+		Q = ["pattern ","device","more","humor","angie's","mallory's","che ","will","faythe","hack","pet","safety","service","fact","capture","friend","th3","provides i","gc","CAFE"],//questions
+ 		A = ["fran_lee","robovac","sentience","sans_comedy","angels","minions","sisters","petra","fountain","helpdesk","bunnybat","get_level","weathernet","eve","resource","bo","heard","teach","outta_juice","poetry"];//answers
+	
+	function call() {
+			out = args.t.call(targetArgs);
+		}
+
+		call();
+
+	while (!out.includes("Connection Terminated.")) {	
+	//return out.replace(/`/g, "");
+		if (out.includes("`NEZ_21`")) {
+			let i = 0;
+		
+			do {
+				targetArgs.ez_21= e[i];	
+				i++;
+			
+			    call();	
+			} while (out.includes("unlock command."));
+		} else if (out.includes("`NEZ_35`")) {
+			let i = 0;
+			
+			targetArgs.digit = 0;
+			do{
+				targetArgs.ez_35 = e[i];
+				i++
+
+				call();
+			}while (out.includes("unlock command."));
+			
+			
+			call();
+			while (out.includes("correct digit.")) {
+				targetArgs.digit++;
+				call();
+			}
+		} else if (out.includes("`NEZ_40`")) {
+			let i = 0, primeI =1;
+
+			targetArgs.ez_prime = p[0];
+			do {
+				targetArgs.ez_40 = e[i];
+				i++;
+
+				call();
+			} while (out.includes("unlock command."));
+			while (out.includes("correct prime.")) {
+				targetArgs.ez_prime = p[primeI];
+				primeI++;
+
+				call();
+			}
+		} else if (out.includes("`Nc001`"))	{
+			let i = 0;
+
+			do {
+				targetArgs.c001 = C[i];
+				targetArgs.color_digit = C[i].length;
+				i++;
+
+				call();
+			} while (out.includes("correct color"));
+
+		} else if (out.includes("`Nc002`"))	{
+			let i = 0;
+
+			do {
+				targetArgs.c002 = C[i];
+				targetArgs.c002_complement= C[(i+4) % 8];
+				i++;
+
+				call();
+			} while (out.includes("correct color"));
+		 
+
+		} else if (out.includes("`Nc003`"))	{
+			let i = 0;
+
+			do {
+				targetArgs.c003 = C[i];
+				targetArgs.c003_triad_1= C[(i+3) % 8];
+				targetArgs.c003_triad_2= C[(i+5) % 8];
+				i++;
+
+				call();
+			} while (out.includes("correct color"));
+
+		} else if (out.includes("`Nl0cket`")) {
+			let i = 0;
+		
+			do {
+				targetArgs.l0cket= K[i];	
+				i++;
+			
+			    call();	
+			} while (out.includes("security k3y."));
+			
+		} else {
+			return"i dont know this\n" +out;
+		};
+	}
+}
